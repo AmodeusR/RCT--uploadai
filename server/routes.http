@@ -1,0 +1,40 @@
+# @name get-prompts
+GET http://localhost:3333/prompts
+
+###
+
+# @name upload-video
+
+POST http://localhost:3333/video
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="example.mp3"
+Content-Type: audio/mpeg
+
+< ./example.mp3
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name create-transcription
+
+POST http://localhost:3333/video/139a143a-95b3-4b13-901f-cea01f910660/transcription
+Content-Type: application/json
+
+{
+  "prompt": "japonês"
+}
+
+###
+
+# @name generate-ai-completion
+
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+  "videoId": "139a143a-95b3-4b13-901f-cea01f910660",
+  "template": "Explique de forma breve sobre o que é o vídeo a partir da descrição a seguir: '''{transcription}'''",
+  "temperature": 0.4
+}
