@@ -35,6 +35,6 @@ Content-Type: application/json
 
 {
   "videoId": "139a143a-95b3-4b13-901f-cea01f910660",
-  "template": "Explique de forma breve sobre o que é o vídeo a partir da descrição a seguir: '''{transcription}'''",
+  "prompt": "Explique de forma breve sobre o que é o vídeo a partir da descrição a seguir: '''{transcription}'''",
   "temperature": 0.4
 }

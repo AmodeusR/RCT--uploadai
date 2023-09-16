@@ -8,7 +8,7 @@ import { fastifyCors } from "@fastify/cors";
 const app = fastify();
 const port = 3333;
 app.register(fastifyCors, {
-  origin: "http://localhost:5173/"
+  origin: "*"
 })
 const routes = [getAllPromptsRoute, uploadVideoRoute, createTranscriptionRoute, generateAICompletionRoute];
 
