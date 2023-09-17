@@ -25,4 +25,4 @@ dist-ssr
 
 # Keep environment variables out of version control
 .env
-tmp
+server/tmp/*
